@@ -60,4 +60,5 @@ WHERE P.ProductSubcategoryID is not NULL
 GROUP BY P.ProductSubcategoryID
 HAVING COUNT(P.ProductSubcategoryID) > 1
 ORDER BY átlagár
-```
+```  
+![image1](/.pics/vegrehajtas.jpg)  
