@@ -23,7 +23,7 @@ VALUES ('Swords', NEWID(), now())
 ### Lekérdezés eredménye egy másik már létező táblázatba  
 
 Az Insert után megadjuk a tábla és a mezők nevét, majd a select részben meghatározzuk, hogy mely mezők adatait szeretnénk ebbe a táblázatba beleírni. A select lehet akár egy nagyon bonyolult összetett lekérdezés is.  
-**Az INSERT után szereplő tábla adattípusainak és a tábla egyéb feltételeinek megfelelő értéket adjon a lekérdezésünk.** 
+Az **INSERT** után szereplő tábla adattípusainak és a tábla egyéb feltételeinek megfelelő értéket adjon a lekérdezésünk.
 
 A szintaktika a következőképpen néz ki.  
 INSERT #táblanév (mező1, mező2, mező3)  
