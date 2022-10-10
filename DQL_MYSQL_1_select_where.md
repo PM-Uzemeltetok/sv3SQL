@@ -30,7 +30,7 @@ A kifejezések mezőket, változókat, függvényeket és operátorokat tartalma
 
 A kommentelés segít nekünk és a kollégáinknak, hogy az általunk írtakat értelmezni tudjuk. Ezek a megjegyzések nem kerülnek értelmezésre futáskor épp ezért akár arra is használhatjuk, hogy a kódunk egy részét ne futtassuk le ha éppen nem szeretnénk. A kommenteket kétféleképpen jelölhetjük. 
 ```sql
--– a sor végéig kommenté válik amit mögé írunk. (inline komment)  
+-- a sor végéig kommenté válik amit mögé írunk. (inline komment)  
 /* 
 https://github.com/PM-Uzemeltetok/sv3SQL
 */ 
