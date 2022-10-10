@@ -26,12 +26,12 @@ A következő táblázat egy rövid áttekintést nyújt az adat típusokról. F
 
 A kifejezések mezőket, változókat, függvényeket és operátorokat tartalmazhatnak. A végrehajtási sorrendet zárojelekkel befolyásolhatjuk ha az alapértelmezett számunkra nem megfelelő. A kifejezések mindenhol használhatóak, ahol a szintaktika megengedi.
 
-##Kommentelés
+## Kommentelés
 
 A kommentelés segít nekünk és a kollégáinknak, hogy az általunk írtakat értelmezni tudjuk. Ezek a megjegyzések nem kerülnek értelmezésre futáskor épp ezért akár arra is használhatjuk, hogy a kódunk egy részét ne futtassuk le ha éppen nem szeretnénk. A kommenteket kétféleképpen jelölhetjük. 
-– a sor végéig kommenté válik amit mögé írunk. (inline komment)
-/* …*/  Akár több sornyi tartalmat változtathatunk vele kommeté (blokk komment)
-A kommenteket az MSSM zöld színnel jelzi.
+– a sor végéig kommenté válik amit mögé írunk. (inline komment)  
+/* …*/  Akár több sornyi tartalmat változtathatunk vele kommeté (blokk komment)  
+A kommenteket az MSSM zöld színnel jelzi.  
 
 ## Lekérdezések 
 
