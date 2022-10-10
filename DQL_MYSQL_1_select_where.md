@@ -29,8 +29,12 @@ A kifejezések mezőket, változókat, függvényeket és operátorokat tartalma
 ## Kommentelés
 
 A kommentelés segít nekünk és a kollégáinknak, hogy az általunk írtakat értelmezni tudjuk. Ezek a megjegyzések nem kerülnek értelmezésre futáskor épp ezért akár arra is használhatjuk, hogy a kódunk egy részét ne futtassuk le ha éppen nem szeretnénk. A kommenteket kétféleképpen jelölhetjük. 
-– a sor végéig kommenté válik amit mögé írunk. (inline komment)  
-/* …*/  Akár több sornyi tartalmat változtathatunk vele kommeté (blokk komment)  
+```sql
+-– a sor végéig kommenté válik amit mögé írunk. (inline komment)  
+/* 
+https://github.com/PM-Uzemeltetok/sv3SQL
+*/ 
+```  
 A kommenteket az MSSM zöld színnel jelzi.  
 
 ## Lekérdezések 
@@ -42,6 +46,7 @@ A Select utasítás végrehajtási sorrendje és szintaktikája sajnos nem egyez
 A végrehajtási sorrend határozza meg, hogy a szerver az utasításainkat milyen sorrendben hajtja végre. Ez nagyban befolyásolja a végeredményt is.Az alábbi végrehajtási sorrend nem minden eleme kötelező csak a select és a from. 
 A végrehajtási sorrend:  
 * FROM (melyik adatbázis melyik táblázatából, táblázataiból szeretnénk az adatokat)  
+* (JOIN)
 * WHERE (itt határozhatjuk meg a feltételeket ami alapján leszűrjük az eredményt)  
 * GROUP BY (itt a feltételeinknek megfelelő rekordokat csoportosíthatjuk)  
 * HAVING (ugyanúgy mint a WHERE parancsnál feltételeket adhatunk meg ami alapján szűrjük az eredményt, de ezúttal már nem az egyes rekordokra szűrünk, hanem a GROUP BY által képzett csoportok közül választhatjuk ki a nekünk szükségeseket)   
@@ -53,6 +58,7 @@ A végrehajtási sorrend:
 A szintaktikai sorrend pedig az alábbi:  
 * SELECT DISTINCT   
 * FROM  
+* (JOIN)
 * WHERE  
 * GROUP BY  
 * HAVING  
