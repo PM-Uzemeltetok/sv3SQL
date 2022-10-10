@@ -41,7 +41,7 @@ A kommenteket az MSSM zöld színnel jelzi.
 
 A lekérdezések segítségével tudunk egy adatbázisból adatokat kinyerni és azokat utána új struktúrában tudjuk őket felhasználni. A lekérdezés nem más mint egy rövid program, ami utasítja az adatbázis szervert, hogy milyen adatokat milyen formában gyűjtsön össze. Automatikusan sem a lekérdezés kódja sem a lekérdezés eredménye nem kerül mentésre, de lehetőségünk van mindkettőt elmenteni vagy továbbirányítani például változóba.
 
-A Select utasítás végrehajtási sorrendje és szintaktikája sajnos nem egyezik meg viszont mindkettőt tudnunk kell. 
+A ## SELECT ## utasítás végrehajtási sorrendje és szintaktikája sajnos nem egyezik meg viszont mindkettőt tudnunk kell. 
 
 A végrehajtási sorrend határozza meg, hogy a szerver az utasításainkat milyen sorrendben hajtja végre. Ez nagyban befolyásolja a végeredményt is.Az alábbi végrehajtási sorrend nem minden eleme kötelező csak a select és a from. 
 A végrehajtási sorrend:  
