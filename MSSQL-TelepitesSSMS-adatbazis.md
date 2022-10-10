@@ -72,10 +72,12 @@ Az SQL szerver esetén a Download Media -t kell választani és ott ISO formátu
 ---  
 # Első adatbázisom 
 
-## Relációs adatbázis elemei    
+## Videólista  
 [A relációs adatbázis](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10709069-a-relacios-adatbazis-alapelemei)  
 [Normalizálás](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708994-normalizalas)  
 [Adattípusok](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10844155-adattipusok-attekintese)
+
+## Relációs adatbázis elemei    
 
 ### Normálformák
 * Alapfogalmak: kulcsok (primary, foreign, természetes kulcsok, összetett kulcsok, tulajdonságok, függőségek, redundancia)
