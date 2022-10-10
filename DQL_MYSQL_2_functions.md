@@ -38,7 +38,7 @@ SELECT P.Name, P.Color, CONCAT (P.name, P.Color)  as 'termék és szín'
 FROM product P
 ```	
 
-A következő 3 fügvényt olyankor használjuk, amikor egy szöveg egy részére van szükségünk. Ezek a **LEFT** a **RIGHT()** és a **SUBSTRING**.
+A következő 3 fügvényt olyankor használjuk, amikor egy szöveg egy részére van szükségünk. Ezek a **LEFT()** a **RIGHT()** és a **SUBSTRING()**.
 Az előbbi kettő elég egyértelmű a SUBSTRING segítségével pedig egy karakterlánc közepéről szedhetünk ki karaktereket. 
 A szintaktikájuk a következő:
 	LEFT(szöveg, karakterek száma) Balról kezdve ad vissza megadott számú karaktert.
