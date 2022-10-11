@@ -43,7 +43,7 @@ A megfelelő JOIN kiválasztása egy-egy lekérdezésben nagyon fontos mivel lá
 ```sql
 -- inner join nélkül ugyanaz a táblakapcsolás
 SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue, c.FirstName
-FROM salesorderheader SOH, contact c
+FROM Sales.salesorderheader SOH, contact c
 WHERE SOH.ContactID = c.ContactID;
 -- c.MiddleName IS NULL;
 ```
