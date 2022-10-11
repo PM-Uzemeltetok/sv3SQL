@@ -46,14 +46,14 @@ Az alábbi kis példa a termék nevét és színét fűzi össze egyetlen karakt
 ```sql
 SELECT P.Name, P.Color, CONCAT (P.name, P.Color)  as 'termék és szín'
 FROM Production.product P
-```	
+```
 
 A következő 3 fügvényt olyankor használjuk, amikor egy szöveg egy részére van szükségünk. Ezek a LEFT() a RIGHT() és a SUBSTRING().
 Az előbbi kettő elég egyértelmű a SUBSTRING segítségével pedig egy karakterlánc közepéről szedhetünk ki karaktereket. 
 A szintaktikájuk a következő:
-	LEFT(szöveg, karakterek száma) Balról kezdve ad vissza megadott számú karaktert.
-	RIGHT (szöveg, karakterek száma) A szöveg végéről indulva add vissza megadott számú karaktert.
-	SUBSTRING (szöveg, honnantól,mennyit) A megadott számú karaktertől kezdve ad vissza megadott számú karaktert.
+	**LEFT()**(szöveg, karakterek száma) Balról kezdve ad vissza megadott számú karaktert.
+	**RIGHT()** (szöveg, karakterek száma) A szöveg végéről indulva add vissza megadott számú karaktert.
+	**SUBSTRING()** (szöveg, honnantól,mennyit) A megadott számú karaktertől kezdve ad vissza megadott számú karaktert.
 
 Az alábbi kis példa nem fog értelmes adatot visszaadni, de arra jó, hogy lássuk a szintaktikát élőben.
 ```sql
@@ -68,7 +68,7 @@ A következő csoportba néhány olyan függvényt soroltunk, amik a karakterlá
 **RTRIM(szöveg)** Levágja a fölösleges közöket egy karakterlánc végéről.
 **TRIM (szöveg)** 2017 óta használható. A karakterlánc mindkét végéről levágja a fölösleges közöket.
 
-Végül pedig a **CHARINDEX**, amit bár gyakran használunk a közök kezeléséhez egy karakterláncban de ennél többet tud.
+Végül pedig a **CHARINDEX()**, amit bár gyakran használunk a közök kezeléséhez egy karakterláncban de ennél többet tud.
 A CHARINDEX segítségével egy szövegrészre kereshetünk rá egy karakterláncban és visszaadja, hogy hányadik karakternél találta meg. A számolást 1-től kezdi. Ha nem találja meg a keresett szövegrészt, akkor 0 értékkel tér vissza.
 Nézzünk is egy gyakorlati példát a karakterfüggvények használatára. Gyakran előfordul, hogy a vezetéknevet és keresztnevet egy cellába mentik el és sokszor külön külön is szükség lenne rájuk.
 
@@ -82,7 +82,7 @@ Ilyenkor jön jól az alábbi programocska, amivel most a termékek nevét fogju
 ```
 Mint látható a függvények paramétereinek helyére írhatunk kifejezéseket. 
 
-Az utolsó szövegfüggvény amivel most foglalkozunk az a **REPLACE**. Segítségével egy karaktert vagy karakter láncot cserélhetünk ki egy másikra egy szövegben.
+Az utolsó szövegfüggvény amivel most foglalkozunk az a **REPLACE()**. Segítségével egy karaktert vagy karakter láncot cserélhetünk ki egy másikra egy szövegben.
 Erre meglepően gyakran van szükség. Például a magyar ékezetes betűket német nyelvterületen szeretik karakterkombinációval helyettesíteni például é helyet ai-t írnak.
 Vagy például szövegként mentenek el számokat és a tizedesvesszőt mint karaktert eltárolják. Ilyen esetekben jön jól a REPLACE.
 
@@ -132,17 +132,17 @@ Itt egy kis példa a használatára.
 SET LANGUAGE MAGYAR
 SELECT P.name, P.SellStartDate,DATENAME(w, P.SellStartDate), DATENAME(m, P.SellStartDate)
 	FROM Production.Product P
-```	
+```
 
 Az aktuális dátumot és időt is lekérhetjük SQL segítségével. Több függvény is képes erre és a részletekre oda kell figyelni a használatukkor.
-A GETDATE** és a SYSDATETIME függvények az aktuális időpontot kérik le az utóbbi pontosabb. Arra viszont oda kell figyelni a használatukkor, hogy az SQL szerver szerinti időzónát használják.
-Ezt küszöböli ki a GETUTCDATE függvény, ami mindig a greenwichi időt adja vissza.
+A **GETDATE** és a **SYSDATETIME** függvények az aktuális időpontot kérik le az utóbbi pontosabb. Arra viszont oda kell figyelni a használatukkor, hogy az SQL szerver szerinti időzónát használják.
+Ezt küszöböli ki a **GETUTCDATE()** függvény, ami mindig a greenwichi időt adja vissza.
 
 ## NULL kezelés
 
-Az SQL nyelvben a NULL nem egyenlő a matematikai nullával vagy semmivel. A NULL azt jelenti, hogy az adott értéket nem ismerjük. Éppen ezért sokszor kell kezelnünk
+Az SQL nyelvben a **NULL** nem egyenlő a matematikai nullával vagy semmivel. A NULL azt jelenti, hogy az adott értéket nem ismerjük. Éppen ezért sokszor kell kezelnünk
 ezt az esetet, mert a NULL-al való összehasonlítás eredménye mindig FALSE illetve a NULL-al végzet bármilyen művelet például az összeadás értéke mindig NULL lesz.
-Ezt az esetet tudja kezelni például a COALESCE függvény, aminek a szintaktikája COALESCE (mezőnév, helyettesítő érték). 
+Ezt az esetet tudja kezelni például a **COALESCE()** függvény, aminek a szintaktikája COALESCE (mezőnév, helyettesítő érték). 
 A COALESCE használatakor ha az adott mezőben egy rekord értéke NULL akkor a helyettesítő értéket használja az SQL.
 Az alábbi példában lekérjük a termékeink nevét és ahol nincs megadva szín oda beírjuk hogy színtelen.
 
@@ -155,15 +155,16 @@ A következő rövid kis lekérdezésben összefűzzük egy mezőbe a termék ne
 ```sql
 SELECT P.Name, P.Color, CONCAT (COALESCE(P.name, 'név?'), COALESCE(P.Color, 'szín?'))  as 'termék és szín'
 FROM product P
-```	
+```
 
-Számok és dátumok esetén az IFNULL függvényt is használhatjuk és akár csak a COALESCE-nél meg kell adnunk egy helyettesítő értéket.
+Számok és dátumok esetén az **IFNULL()** függvényt is használhatjuk és akár csak a COALESCE-nél meg kell adnunk egy helyettesítő értéket.
 Az alábbi kis példában ha nincs megadva a termék súlya akkor automatikusan beírja hogy 2 legyen.
 ```sql
 SELECT P.Name, P.Weight, ifnull(P.weight, '2')
 FROM product P
-```	
-Vannak olyan esetek, amikor arra vagyunk kíváncsiak, hogy egy adott mező értéke NULL vagy nem NULL.
+```
+
+Vannak olyan esetek, amikor arra vagyunk kíváncsiak, hogy egy adott mező értéke NULL vagy nem NULL erre szolgál az **IS NULL** kifejezés.
 
 Az alábbi kis példában kigyűjtjük azokat a termékeket, amiknek nincs megadva a színe.
 ```sql
@@ -171,7 +172,7 @@ SELECT P.Name, P.color
 FROM product P
 WHERE P.Color IS NULL
 ```
-Ennek az ellentéte amikor arra vagyunk kíváncsiak, hogy mely termékeknek van megadva a színe. Erre használhatjuk az IS NOT NULL kifejezést.
+Ennek az ellentéte amikor arra vagyunk kíváncsiak, hogy mely termékeknek van megadva a színe. Erre használhatjuk az **IS NOT NULL** kifejezést.
 ```sql
 SELECT P.Name, P.color
 FROM product P
