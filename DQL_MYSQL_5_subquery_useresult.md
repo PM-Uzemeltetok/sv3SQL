@@ -19,11 +19,11 @@ A lekérdezés végrehajtásakor az RDMS először a részlekérdezést értéke
 A subquery csak 1 értéket adhat vissza. 
 ```sql
 -- beágyazott rész
-select avg(TotalDue) from salesorderheader
+select avg(TotalDue) from Sales.salesorderheader
 --
 select 	soh.OrderDate, sum(soh.TotalDue), 
-        (select avg(TotalDue) from salesorderheader) as atlag -- 1 érték! nem több sor 
-from salesorderheader soh
+        (select avg(TotalDue) from sales.SalesOrderHeader) as atlag -- 1 érték! nem több sor 
+from sales.salesorderheader soh
 group by soh.OrderDate;
 ```  
 
@@ -35,24 +35,24 @@ Használhat összehasonlító operátorokat, például =, >, < az allekérdezés
 -- A ListPrice=0 termékeket ne vegyük figyelembe az átlagár számításánál!
 
 SELECT P.ProductID, P.Name, P.ListPrice, 
-	P.ListPrice - (SELECT AVG(P.ListPrice) FROM product P WHERE P.ListPrice > 0) PriceDiff
-FROM product P
-WHERE P.ListPrice > (SELECT AVG(P.ListPrice) FROM product P WHERE P.ListPrice > 0) * 1.2;
+	P.ListPrice - (SELECT AVG(P.ListPrice) FROM Production.product P WHERE P.ListPrice > 0) PriceDiff
+FROM Production.product P
+WHERE P.ListPrice > (SELECT AVG(P.ListPrice) FROM Production.product P WHERE P.ListPrice > 0) * 1.2;
 ```
 
 ### subquery IN és NOT IN operátorokkal
 ```sql
 -- beágyazott rész
-select * from salesorderheader where OrderDate = '2001-07-07';
+select * from Sales.salesorderheader where OrderDate = '2012-07-07';
 --  
-select ContactID from salesorderheader where OrderDate = '2001-07-07';
-select ContactID from salesorderheader where OrderDate = '2001-07-07';
+select ContactID from Sales.salesorderheader where OrderDate = '2012-07-07';
+select ContactID from Sales.salesorderheader where OrderDate = '2012-07-07';
 
-select * from salesorderdetail 
-where SalesOrderID in (select SalesOrderID from salesorderheader where OrderDate = '2001-07-07');
+select * from Sales.salesorderdetail 
+where SalesOrderID in (select SalesOrderID from Sales.salesorderheader where OrderDate = '2012-07-07');
 
 select * from contact 
-where ContactID not in (select ContactID from salesorderheader where OrderDate = '2001-07-07');
+where ContactID not in (select ContactID from ssales.salesorderheader where OrderDate = '2001-07-07');
 
 ```  
 
@@ -60,7 +60,7 @@ where ContactID not in (select ContactID from salesorderheader where OrderDate =
 -- IN klauzula használata (csak egy oszlop lehet a SELECT-ben)
 -- Melyek azok a rendelések, amelyeknél a contact személynek nincs középső neve(NULL)
 SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue
-FROM salesorderheader SOH
+FROM sales.salesorderheader SOH
 WHERE SOH.ContactID IN (SELECT ContactID 
 							FROM contact c
 							WHERE c.MiddleName IS NULL);
@@ -68,7 +68,7 @@ WHERE SOH.ContactID IN (SELECT ContactID
 -- Az előző feladat megoldása JOIN-nal
 -- Hasonlítsuk össze a két megoldást a végrehajtási terv alapján
 SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue
-FROM salesorderheader SOH
+FROM sales.salesorderheader SOH
 INNER JOIN contact c ON SOH.ContactID = c.ContactID
 WHERE c.MiddleName IS NULL;
 
