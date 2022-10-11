@@ -9,7 +9,7 @@ Természetesen nem mindent lehet mindenné átkonvertálni. Ezt a következő t�
 
 [T-SQL adattípus konverzió]([https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html](https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-type-conversion-database-engine?view=sql-server-ver16))
 
-A konvertálásra több függvényünk is van. A **CAST** és a **CONVERT** függvények közel teljesen egyenértékűek alapszinten, a CONVERT a nyelvfüggű beállításoknál rendelkezik extra funkcióval cserébe a CAST több SQL nyelvben használatos míg a CONVERT nem. A szintaktikájuk eltérő, ami a következőképpen néz ki.
+A konvertálásra több függvényünk is van. A **CAST()** és a **CONVERT()** függvények közel teljesen egyenértékűek alapszinten, a CONVERT a nyelvfüggű beállításoknál rendelkezik extra funkcióval cserébe a CAST több SQL nyelvben használatos míg a CONVERT nem. A szintaktikájuk eltérő, ami a következőképpen néz ki.
 CAST(konvertálandó AS adattípus) a CAST esetében fontos, hogy itt  az AS szó nem hagyható el mindig ki kell írni. A CONVERT(adattípus, konvertálandó) szintaktikája a fordítottja a CAST-énak.
 A kovertáladó lehet változó mező stb. Az adattípus mindkét esetben az az adattípus amire konvertálni szeretnénk.
 Fontos még megjegyezni, hogy vannak korlátai annak milyen adattípusokra lehet konvertálni. 
