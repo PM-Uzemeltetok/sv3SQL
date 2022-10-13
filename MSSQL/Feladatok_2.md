@@ -1,4 +1,4 @@
-1. Kérdezd le a contact táblából a neveket és fűzd össze őket egyetlen mezőbe. A mező neve legyen teljes név. 
+1. Kérdezd le a Person táblából a neveket és fűzd össze őket egyetlen mezőbe. A mező neve legyen teljes név. 
 2. Kérdezd le a contact táblából a vezetékneveket és fűzd hozzá a titulushoz. A titulus és a név között legyen köz.
 3. Kérdezd le a terméknév első 5 karakterét a product táblából.
 4. Kérdezd le a terméknév utolsó 5 karakterét a product táblából.
