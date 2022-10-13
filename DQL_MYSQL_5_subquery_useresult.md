@@ -51,32 +51,29 @@ select ContactID from Sales.salesorderheader where OrderDate = '2012-07-07';
 select * from Sales.salesorderdetail 
 where SalesOrderID in (select SalesOrderID from Sales.salesorderheader where OrderDate = '2012-07-07');
 
-select * from contact 
-where ContactID not in (select ContactID from ssales.salesorderheader where OrderDate = '2001-07-07');
+select * from Sales.salesorderdetail 
+where SalesOrderID not in (select SalesOrderID from Sales.salesorderheader where OrderDate = '2012-07-07');
 
 ```  
 
 ```sql
 -- IN klauzula használata (csak egy oszlop lehet a SELECT-ben)
--- Melyek azok a rendelések, amelyeknél a contact személynek nincs középső neve(NULL)
-SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue
-FROM sales.salesorderheader SOH
-WHERE SOH.ContactID IN (SELECT ContactID 
-							FROM contact c
-							WHERE c.MiddleName IS NULL);
+-- Melyek azok a termékek amelyek termékalkategóriája Brakes és mennyi a listaáruk.
 
+Select PP.Name, PP.ListPrice from Production.Product PP
+WHERE PP.ProductSubcategoryID IN (SELECT PSC.ProductSubcategoryID 
+								from Production.ProductSubcategory PSC
+								WHERE PSC.Name='Brakes'	)
 -- Az előző feladat megoldása JOIN-nal
 -- Hasonlítsuk össze a két megoldást a végrehajtási terv alapján
-SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue
-FROM sales.salesorderheader SOH
-INNER JOIN contact c ON SOH.ContactID = c.ContactID
-WHERE c.MiddleName IS NULL;
+SELECT PP.Name, PP.ListPrice from Production.Product PP 
+		inner join Production.ProductSubcategory PSC on PP.ProductSubcategoryID=PSC.ProductSubcategoryID
+		WHERE PSC.Name='Brakes'
 
 -- inner join nélkül ugyanaz a táblakapcsolás
-SELECT SOH.SalesOrderID, SOH.DueDate, SOH.TotalDue, c.FirstName
-FROM salesorderheader SOH, contact c
-WHERE SOH.ContactID = c.ContactID;
--- c.MiddleName IS NULL;
+
+SELECT PP.Name, PP.ListPrice from Production.Product PP, Production.ProductSubcategory PSC
+WHERE PP.ProductSubcategoryID=PSC.ProductSubcategoryID AND PSC.Name='Brakes'
 ```
 
 ## FROM
@@ -84,9 +81,9 @@ A FROM után használt allekérdezésből visszaadott eredménykészlet ideiglen
 ```sql 
 -- 1. verzió: Származtatott tábla (Derived table)
 SELECT X.NoOfSales, COUNT(1) SalesNo
-FROM (SELECT SOH.ContactID, COUNT(1) NoOfSales
-	  FROM salesorderheader SOH
-	  GROUP BY SOH.ContactID) X
+FROM (SELECT SOH.CustomerID, COUNT(1) NoOfSales
+	  FROM Sales.SalesOrderHeader SOH
+	  GROUP BY SOH.CustomerID) X
 GROUP BY X.NoOfSales
 ORDER BY 1;
 
@@ -104,22 +101,22 @@ Vásárlások száma	Hány partner
 	28					  2*/
 
 -- egy vevőnk hányszor vásárolt
-SELECT SOH.ContactID, COUNT(1) NoOfSales
-	  FROM salesorderheader SOH
-	  GROUP BY SOH.ContactID;
+SELECT SOH.customerid, COUNT(1) NoOfSales
+	  FROM sales.SalesOrderHeader SOH
+	  GROUP BY SOH.customerid;
 
 -- 1. verzió: Származtatott tábla (Derived table)
 SELECT innerselect.NoOfSales, COUNT(1) as SalesNo
-FROM (SELECT SOH.ContactID, COUNT(1) as NoOfSales
-	  FROM salesorderheader SOH
-	  GROUP BY SOH.ContactID) innerselect
+FROM (SELECT SOH.CustomerID, COUNT(1) as NoOfSales
+	  FROM sales.SalesOrderHeader SOH
+	  GROUP BY SOH.CustomerID) innerselect
 GROUP BY innerselect.NoOfSales
 ORDER BY 1;
 
 -- 2. verzió: CTE - Common Table Expression
-;WITH X AS (SELECT SOH.ContactID, COUNT(1) NoOfSales
-	  FROM salesorderheader SOH
-	  GROUP BY SOH.ContactID)
+;WITH X AS (SELECT SOH.CustomerID, COUNT(1) NoOfSales
+	  FROM sales.SalesOrderHeader SOH
+	  GROUP BY SOH.CustomerID)
 SELECT X.NoOfSales, COUNT(1) SalesNo
 FROM X
 GROUP BY X.NoOfSales
@@ -136,12 +133,12 @@ Abban az esetben ha korrelált  lekérdezés ugyanabból a táblára hivatkozik 
 SELECT 	productsubcategory.productsubcategoryID
 		, productsubcategory.productcategoryID
         -- belső (inner query) lekérdezés hivatkozik a külső lekérdezés értékeire
-		, (SELECT MAX(ListPrice) FROM product
+		, (SELECT MAX(ListPrice) FROM Production.Product
             WHERE product.productsubcategoryID = productsubcategory.productsubcategoryID ) as maxprice	
-		, (SELECT min(ListPrice) FROM product
+		, (SELECT min(ListPrice) FROM Production.Product
             WHERE product.productsubcategoryID = productsubcategory.productsubcategoryID ) as minprice
 		-- --------------------------------------
-FROM productsubcategory;
+FROM Production.ProductSubcategory;
 ```
 ```sql
 -- Korrelált SELECT példa (itt is csak skalár érték lehet)
@@ -149,10 +146,10 @@ FROM productsubcategory;
 -- A ListPrice=0 termékeket ne vegyük figyelembe az átlagár számításánál!
 
 SELECT P1.ProductID, P1.Name, P1.ListPrice
-FROM product P1
+FROM production.Product P1
 WHERE P1.ListPrice > 
 	(SELECT AVG(P2.ListPrice) 
-	 FROM product P2 
+	 FROM Production.Product P2 
 	 WHERE ( P1.ProductSubcategoryID = P2.ProductSubcategoryID 
 				OR P1.ProductSubcategoryID IS NULL 
 				AND P2.ProductSubcategoryID IS NULL)
