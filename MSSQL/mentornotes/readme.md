@@ -1,1 +1,1 @@
-Ez kerül majd a a társrepoba a mentorokna
+Ez kerül majd a a társrepoba a mentoroknak
