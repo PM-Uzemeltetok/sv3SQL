@@ -1,163 +1,163 @@
 /*SELECT feladatok
-Kérdezd le az összes termék nevét színét és árát a product táblából.*/
+KÃ©rdezd le az Ã¶sszes termÃ©k nevÃ©t szÃ­nÃ©t Ã©s Ã¡rÃ¡t a product tÃ¡blÃ¡bÃ³l.*/
 
 Select PP.name, PP.Color, PP.ListPrice  from production.product PP
 
---Kérdezd le az összes termék alkategória nevet a productsubcategory táblából.
+--KÃ©rdezd le az Ã¶sszes termÃ©k alkategÃ³ria nevet a productsubcategory tÃ¡blÃ¡bÃ³l.
 SELECT PSC.Name from Production.ProductSubcategory PSC
 
---Kérdezd le az összes termékkategória nevet a productcategory táblából.
+--KÃ©rdezd le az Ã¶sszes termÃ©kkategÃ³ria nevet a productcategory tÃ¡blÃ¡bÃ³l.
 
 Select PC.Name from Production.ProductCategory PC
 
---Kérdezd le az összes nevet a Person táblából.
+--KÃ©rdezd le az Ã¶sszes nevet a Person tÃ¡blÃ¡bÃ³l.
 
 SELECT PP.FirstName, PP.MiddleName, PP.LastName from Person.Person PP
 
---Kérdezd le az összes nevet és megszólítást  a Person táblából.
+--KÃ©rdezd le az Ã¶sszes nevet Ã©s megszÃ³lÃ­tÃ¡st  a Person tÃ¡blÃ¡bÃ³l.
 
 SELECT PP.FirstName, PP.MiddleName, PP.LastName, PP.Title from Person.Person PP
 
 /*WHERE feladatok
-Kérdezd le a kék termékek minden adatát a product táblából.*/
+KÃ©rdezd le a kÃ©k termÃ©kek minden adatÃ¡t a product tÃ¡blÃ¡bÃ³l.*/
 Select * from Production.Product PP
 where PP.Color='Blue'
---Kérdezd le a 46-os méretû termékek nevét és színét a product táblából.
+--KÃ©rdezd le a 46-os mÃ©retÃ» termÃ©kek nevÃ©t Ã©s szÃ­nÃ©t a product tÃ¡blÃ¡bÃ³l.
 Select PP.Name, PP.Color from Production.Product PP
 where PP.Size='46'
 
---Kérdezd le az S méretû termékek nevét és listaárát a product táblából.
+--KÃ©rdezd le az S mÃ©retÃ» termÃ©kek nevÃ©t Ã©s listaÃ¡rÃ¡t a product tÃ¡blÃ¡bÃ³l.
 Select PP.Name, PP.ListPrice from Production.Product PP
 where PP.Size='S'
 
---Kérdezd le a Kim keresztnevû felhasználókat a Person táblából.
+--KÃ©rdezd le a Kim keresztnevÃ» felhasznÃ¡lÃ³kat a Person tÃ¡blÃ¡bÃ³l.
 
 SELECT PP.FirstName, PP.MiddleName, PP.LastName from Person.Person PP
 WHERE PP.FirstName='Kim'
 
---Kérdezd le az 50 forintnál olcsóbb listaárú termékeket a product táblából.
+--KÃ©rdezd le az 50 forintnÃ¡l olcsÃ³bb listaÃ¡rÃº termÃ©keket a product tÃ¡blÃ¡bÃ³l.
 Select PP.Name, PP.ListPrice from Production.Product PP
 where PP.ListPrice<'50'
 
---Kérdezd le a S-es kék termékeket a product táblából.
+--KÃ©rdezd le a S-es kÃ©k termÃ©keket a product tÃ¡blÃ¡bÃ³l.
 Select* from Production.Product PP
 where PP.Color='Blue' AND PP.Size='S'
---Kérdezd le a 56-os piros termékeket a product táblából.
+--KÃ©rdezd le a 56-os piros termÃ©keket a product tÃ¡blÃ¡bÃ³l.
 Select* from Production.Product PP
 where PP.Color='Red' AND PP.Size='56'
---Kérdezd le a kék és a piros termékeket a product táblából.
+--KÃ©rdezd le a kÃ©k Ã©s a piros termÃ©keket a product tÃ¡blÃ¡bÃ³l.
 Select* from Production.Product PP
 where PP.Color='Red' or PP.Color='Blue'
---Kérdezd le a 42-es és 62-es méretû termékeket a product táblából.
+--KÃ©rdezd le a 42-es Ã©s 62-es mÃ©retÃ» termÃ©keket a product tÃ¡blÃ¡bÃ³l.
 Select* from Production.Product PP
 where PP.Size='42' OR PP.Size='62'
 
---Kérdezd le azokat a termékeket amiknek a listaára 100 és 500 forint között van.
+--KÃ©rdezd le azokat a termÃ©keket amiknek a listaÃ¡ra 100 Ã©s 500 forint kÃ¶zÃ¶tt van.
 Select* from Production.Product PP
 where PP.ListPrice>'100' and PP.ListPrice<'500'
 
 -------------------------------------
---Kérdezd le azokat a rendelésazonosítókat amiket 2012.03.01 és 2012.03.20 között rendeltek a salesorderheader táblából.
-Select * from Sales.SalesOrderHeader soh
+--KÃ©rdezd le azokat a rendelÃ©sazonosÃ­tÃ³kat amiket 2012.03.01 Ã©s 2012.03.20 kÃ¶zÃ¶tt rendeltek a salesorderheader tÃ¡blÃ¡bÃ³l.
+Select SOH.OrderID from Sales.SalesOrderHeader soh
 where soh.OrderDate> '2012.03.01' and soh.OrderDate <'2012.03.20'
---Kérdezd le a 42-es méretû fekete termékeket.
+--KÃ©rdezd le a 42-es mÃ©retÃ» fekete termÃ©keket.
 
 Select * from Production.Product PP
 WHERE PP.Size='42' AND PP.Color='Black'
 
---Kérdezd le a nem 42-es méretû termékeket.
+--KÃ©rdezd le a nem 42-es mÃ©retÃ» termÃ©keket.
 Select * from Production.Product PP
 WHERE PP.Size!='42' 
---Kérdezd le azokat a termékekekt amik nem fekete színûek.
+--KÃ©rdezd le azokat a termÃ©kekekt amik nem fekete szÃ­nÃ»ek.
 Select * from Production.Product PP
 WHERE PP.Color!='Black'
 
---Kérdezd le azokat a termékeket amiknek a nevében szerepel a bike szó.
+--KÃ©rdezd le azokat a termÃ©keket amiknek a nevÃ©ben szerepel a bike szÃ³.
 Select * from Production.Product PP
 WHERE PP.Name Like '%bike%'
 
---Kérdezd le azokat a termékeket amiknek a nevében szerepel a Sock szó.
+--KÃ©rdezd le azokat a termÃ©keket amiknek a nevÃ©ben szerepel a Sock szÃ³.
 Select * from Production.Product PP
 WHERE PP.Name Like '%Sock%'
 
---Kérdezd le azokat a termékeket amikenk a neve a sport szóval kezdõdik.
+--KÃ©rdezd le azokat a termÃ©keket amikenk a neve a sport szÃ³val kezdÃµdik.
 Select * from Production.Product PP
 WHERE PP.Name Like 'Sport%'
 
---Kérdezd le azokat a termékeket amiknek a neve Red szóra végzõdik.
+--KÃ©rdezd le azokat a termÃ©keket amiknek a neve Red szÃ³ra vÃ©gzÃµdik.
 Select * from Production.Product PP
 WHERE PP.Name Like '%Red'
---Kérdezd le azokat a termékeket amiknek a nevében szerepel a Ball szó.
+--KÃ©rdezd le azokat a termÃ©keket amiknek a nevÃ©ben szerepel a Ball szÃ³.
 Select * from Production.Product PP
 WHERE PP.Name Like '%Ball%'
 
---Kérdezd le a kék színû termékeket és a színét írd ki magyarul.
-Select PP.Name, IIF(PP.Color='Blue','Kék','') from Production.Product PP
+--KÃ©rdezd le a kÃ©k szÃ­nÃ» termÃ©keket Ã©s a szÃ­nÃ©t Ã­rd ki magyarul.
+Select PP.Name, IIF(PP.Color='Blue','KÃ©k','') from Production.Product PP
 WHERE PP.Color='Blue'
---Kérdezd le a piros színû termékeket és a színét írd ki magyarul.
+--KÃ©rdezd le a piros szÃ­nÃ» termÃ©keket Ã©s a szÃ­nÃ©t Ã­rd ki magyarul.
 Select PP.Name, IIF(PP.Color='Red','Piros','') from Production.Product PP
 WHERE PP.Color='Red'
-/*Kérdezd le a termékek nevét, ha a sellenddate meg van adva írasd ki hogy már nem áruljuk
-ha nincs megadva akkor azt hogy még áruljuk az áruljuk? nevû mezõbe.*/
-Select PP.Name, IIF(PP.SellEndDate is NULL, 'már nem áruljuk', 'áruljuk') as 'áruljuk?'from Production.Product PP
+/*KÃ©rdezd le a termÃ©kek nevÃ©t, ha a sellenddate meg van adva Ã­rasd ki hogy mÃ¡r nem Ã¡ruljuk
+ha nincs megadva akkor azt hogy mÃ©g Ã¡ruljuk az Ã¡ruljuk? nevÃ» mezÃµbe.*/
+Select PP.Name, IIF(PP.SellEndDate is NULL, 'mÃ¡r nem Ã¡ruljuk', 'Ã¡ruljuk') as 'Ã¡ruljuk?'from Production.Product PP
 
---Kérdezd le azon termékek nevét amit már nem árusítunk és a állapot nevû mezõbe írd ki hogy nem forgalmazzuk.
-Select PP.Name, 'nem forgalmazzuk' as 'állapot'
+--KÃ©rdezd le azon termÃ©kek nevÃ©t amit mÃ¡r nem Ã¡rusÃ­tunk Ã©s a Ã¡llapot nevÃ» mezÃµbe Ã­rd ki hogy nem forgalmazzuk.
+Select PP.Name, 'nem forgalmazzuk' as 'Ã¡llapot'
 from Production.Product PP
 WHERE PP.SellEndDate is null
 
---Rendezd a termékek nevét ABC sorrendbe.
+--Rendezd a termÃ©kek nevÃ©t ABC sorrendbe.
 Select PP.Name
 from Production.Product PP
 Order By PP.Name
 
---Rendezd a termékek nevét az listaáruk szerint.
+--Rendezd a termÃ©kek nevÃ©t az listaÃ¡ruk szerint.
 Select PP.Name
 from Production.Product PP
 Order By PP.ListPrice
 
---Kérdezd le a termékek nevét, árát és színét és rendezd listaár szerint csökkenõ sorrendbe
+--KÃ©rdezd le a termÃ©kek nevÃ©t, Ã¡rÃ¡t Ã©s szÃ­nÃ©t Ã©s rendezd listaÃ¡r szerint csÃ¶kkenÃµ sorrendbe
 Select PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 Order By PP.ListPrice desc
 
-/*Kérdezd le a termékek nevét, árát és színét és rendezd listaár szerint csökkenõ sorrendbe 
-valamint a termék neve szerint ABC sorrendbe*/
+/*KÃ©rdezd le a termÃ©kek nevÃ©t, Ã¡rÃ¡t Ã©s szÃ­nÃ©t Ã©s rendezd listaÃ¡r szerint csÃ¶kkenÃµ sorrendbe 
+valamint a termÃ©k neve szerint ABC sorrendbe*/
 Select PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 Order By PP.ListPrice desc, PP.name
 
---Kérdezd le a 100 legdrágább terméket.
+--KÃ©rdezd le a 100 legdrÃ¡gÃ¡bb termÃ©ket.
 
 Select TOP 100 PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 Order By PP.ListPrice desc
 
---Kérdezd le a 100 legrégebb óta (sellstartdate) forgalmazott terméket
+--KÃ©rdezd le a 100 legrÃ©gebb Ã³ta (sellstartdate) forgalmazott termÃ©ket
 Select TOP 100 PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 Order By PP.SellStartDate
 
---Kérdezd le a 100 legrégebb óta (sellstartdate) forgalmazott terméket, amit még most is forgalmazunk
+--KÃ©rdezd le a 100 legrÃ©gebb Ã³ta (sellstartdate) forgalmazott termÃ©ket, amit mÃ©g most is forgalmazunk
 Select TOP 100 PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 where PP.SellEndDate is not null
 Order By PP.SellStartDate
 
-/*Kérdezd le a 100 legolcsóbb terméket, aminek a színe fekete, 
-a neve tartalmazza a Mountain szót, az ára nem 0 és még mindig forgalmazzuk.*/
+/*KÃ©rdezd le a 100 legolcsÃ³bb termÃ©ket, aminek a szÃ­ne fekete, 
+a neve tartalmazza a Mountain szÃ³t, az Ã¡ra nem 0 Ã©s mÃ©g mindig forgalmazzuk.*/
 Select TOP 100  PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 where PP.SellEndDate is not null AND PP.Color='Black' AND PP.Name Like '%Mountain%' AND PP.ListPrice >'0'
 Order By PP.ListPrice
 
---Kérdezd le a 10 legolcsóbb terméket, aminek az ára nagyobb 0-nál és a neve tartalmazza a Pedal szót.
+--KÃ©rdezd le a 10 legolcsÃ³bb termÃ©ket, aminek az Ã¡ra nagyobb 0-nÃ¡l Ã©s a neve tartalmazza a Pedal szÃ³t.
 Select TOP 10  PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
 where PP.Name Like '%Pedal%' AND PP.ListPrice >'0'
 Order By PP.ListPrice
 
---Kérdezd le a 20 legdrágább terméktõl a 30 utána következõ terméket, amik kékek és az áruk nem 0.
+--KÃ©rdezd le a 20 legdrÃ¡gÃ¡bb termÃ©ktÃµl a 30 utÃ¡na kÃ¶vetkezÃµ termÃ©ket, amik kÃ©kek Ã©s az Ã¡ruk nem 0.
 
 Select PP.Name, PP.ListPrice, PP.Color
 from Production.Product PP
