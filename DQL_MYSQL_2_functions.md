@@ -58,7 +58,7 @@ A szintaktikájuk a következő:
 Az alábbi kis példa nem fog értelmes adatot visszaadni, de arra jó, hogy lássuk a szintaktikát élőben.
 ```sql
 SELECT P.name, LEFT(P.name,5) eleje, RIGHT(P.name, 4) vége, SUBSTRING(P.name,3,3) közepe
-FROM product P
+FROM Production.product P
 ```
 
 A következő csoportba néhány olyan függvényt soroltunk, amik a karakterlánc hosszát valamint a közök ' ' eltávolítását teszik lehetővé.
@@ -148,20 +148,20 @@ Az alábbi példában lekérjük a termékeink nevét és ahol nincs megadva sz�
 
 ```sql
 SELECT P.Name, P.Color, COALESCE(P.Color,'szintelen') as 'szín'
-FROM product P
+FROM Production.product P
 ```	
 Fontos még tudni, hogy COALESCE függvénynél akár a mezőnév helyére akár a helyettesítő érték helyére írhatunk kifejezéseket is. Az előbbi példát kicsit továbbvive.
 A következő rövid kis lekérdezésben összefűzzük egy mezőbe a termék nevét és színét és kezeljük azokat az eseteket ha akár a név akár a szín mezőben NULL van.
 ```sql
 SELECT P.Name, P.Color, CONCAT (COALESCE(P.name, 'név?'), COALESCE(P.Color, 'szín?'))  as 'termék és szín'
-FROM product P
+FROM Production.product P
 ```
 
 Számok és dátumok esetén az **IFNULL()** függvényt is használhatjuk és akár csak a COALESCE-nél meg kell adnunk egy helyettesítő értéket.
 Az alábbi kis példában ha nincs megadva a termék súlya akkor automatikusan beírja hogy 2 legyen.
 ```sql
 SELECT P.Name, P.Weight, ifnull(P.weight, '2')
-FROM product P
+FROM Production.product P
 ```
 
 Vannak olyan esetek, amikor arra vagyunk kíváncsiak, hogy egy adott mező értéke NULL vagy nem NULL erre szolgál az **IS NULL** kifejezés.
@@ -169,12 +169,12 @@ Vannak olyan esetek, amikor arra vagyunk kíváncsiak, hogy egy adott mező ért
 Az alábbi kis példában kigyűjtjük azokat a termékeket, amiknek nincs megadva a színe.
 ```sql
 SELECT P.Name, P.color
-FROM product P
+FROM Production.product P
 WHERE P.Color IS NULL
 ```
 Ennek az ellentéte amikor arra vagyunk kíváncsiak, hogy mely termékeknek van megadva a színe. Erre használhatjuk az **IS NOT NULL** kifejezést.
 ```sql
 SELECT P.Name, P.color
-FROM product P
+FROM Production.product P
 WHERE P.Color IS NOT NULL
 ```
