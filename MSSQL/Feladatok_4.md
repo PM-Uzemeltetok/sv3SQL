@@ -24,13 +24,13 @@ termék az egyes termék alkategóriákban és mi a nevük.
 
 1. Kérdezd le, hogy melyik contactID-val milyen productID-jú termékből mennyit rendeltek. (SalesorderHeader, SalesOrderDetail)
 2. Kérdezd le hogy vásárlók rendeléseit. Szerepeljen benne a SalesorderID rendelt termék neve éshogy mennyit rendelt valamint vásárlók neve(Firstname, middlename, lastname).  (contact, salesorderdetail, salesorderheader, product)
-3. Kérdezd le, hogy melyik termékekből mennyit és milyen értékben vásároltak 2001. szeptermberében és rendezd rendelési érték majd a rendelési mennyiség végül a vásárló neve szerinti sorrendbe. 
+3. Kérdezd le, hogy melyik termékekből mennyit és milyen értékben vásároltak 2012. szeptermberében és rendezd rendelési érték majd a rendelési mennyiség végül a vásárló neve szerinti sorrendbe. 
     * A lekérdezés ne tartalmazza a 10 dollárnál olcsóbb termékeket valamint azokat a rendeléseket, amiknél kevesebb mint 3 darabot rendeltek az adott termékból.
 
 ---   
 ## Öszetett
 1. Kérdezd le melyik *termékalkategória* volt a legsikeresebb darabszám szerint (OrderQty) (salesorderdetail (ProductID))
-    * a 2001-es évben (salesorderheader (OrderDate))
+    * a 2012-es évben (salesorderheader (OrderDate))
     * csak a legjobb 5-öt jelenítsd meg
 1. Kérdezd le melyik *termékkategória* volt a legsikeresebb összeg szerint (salesorderdetail (ProductID))
     * III. negyedévben (salesorderheader (OrderDate)) 
