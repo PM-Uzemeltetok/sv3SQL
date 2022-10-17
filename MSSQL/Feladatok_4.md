@@ -32,6 +32,6 @@ termék az egyes termék alkategóriákban és mi a nevük.
 1. Kérdezd le melyik *termékalkategória* volt a legsikeresebb darabszám szerint (OrderQty) (salesorderdetail (ProductID))
     * a 2012-es évben (salesorderheader (OrderDate))
     * csak a legjobb 5-öt jelenítsd meg
-1. Kérdezd le melyik *termékkategória* volt a legsikeresebb összeg szerint (salesorderdetail (ProductID))
+1. Kérdezd le melyik *termékkategória* (productcategory) volt a legsikeresebb összeg szerint (salesorderdetail (LineTotal))
     * III. negyedévben (salesorderheader (OrderDate)) 
-    * csak a legjobb 5-öt jelenítsd meg    
+    * csak a legjobb 3-at jelenítsd meg    
