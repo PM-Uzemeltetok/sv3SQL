@@ -4,7 +4,7 @@
 2. Kérdezd le az összes termék alkategória nevet a productsubcategory táblából.
 3. Kérdezd le az összes termékkategória nevet a productcategory táblából.
 4. Kérdezd le az összes kapcsolattartó nevét a Person táblából.
-5. Kérdezd le az összes kapcsolattartó nevét és e-mail címét a Person táblából.
+5. Kérdezd le az összes kapcsolattartó nevét és megszólítását (Title) a Person táblából.
 
 ## WHERE feladatok
 1. Kérdezd le a kék termékek minden adatát a product táblából.
