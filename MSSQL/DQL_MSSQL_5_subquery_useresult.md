@@ -43,13 +43,12 @@ WHERE P.ListPrice > (SELECT AVG(P.ListPrice) FROM Production.product P WHERE P.L
 ### subquery IN és NOT IN operátorokkal
 ```sql
 -- beágyazott rész
-select * from Sales.salesorderheader where OrderDate = '2012-07-07';
+select * from Sales.salesorderheader SOH where OrderDate = '2012-07-07';
 --  
-select ContactID from Sales.salesorderheader where OrderDate = '2012-07-07';
-select ContactID from Sales.salesorderheader where OrderDate = '2012-07-07';
+select SOH.CustomerID from Sales.salesorderheader SOH where OrderDate = '2012-07-07';
 
-select * from Sales.salesorderdetail 
-where SalesOrderID in (select SalesOrderID from Sales.salesorderheader where OrderDate = '2012-07-07');
+select * from Sales.salesorderdetail SOD
+where SOD.SalesOrderID in (select SOH.SalesOrderID from Sales.salesorderheader SOH where OrderDate = '2012-07-07');
 
 select * from Sales.salesorderdetail 
 where SalesOrderID not in (select SalesOrderID from Sales.salesorderheader where OrderDate = '2012-07-07');
