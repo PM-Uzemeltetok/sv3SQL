@@ -33,39 +33,17 @@ FROM forrástábla
 ### Select tartalma nem létező táblába - pl tábla másolás(backup), eredményhalmaz feldolgozás 
 
 Ha nem létezne még a táblázatunk ahova szeretnénk egy lekérdezés eredményét eltárolni erre is van lehetőség. Ilyenkor azonban az SQL fogja automatikusan beállítani a táblázatunk mezőit és ad neveket a mezőknek. Ennek a szintaktikája a következőképpen néz ki.  
-
-CREATE TABLE táblanév    
-SELECT (forrásmezői1, forrásmező2, forrásmező3)  
+  
+SELECT forrásmezői1, forrásmező2, forrásmező3 into céltábla
 FROM forrástábla  
 
 Itt is igaz hogy a SELECT lehet egy nagyon bonyolult lekérdezés is. **Az adott nével nem lehet tábla az adatbázisunkban.**  
 
 ```sql
 -- -----------------------
-INSERT INTO table(c1,c2,...)
-VALUES 
-   (v11,v12,...),
-   (v21,v22,...),
-    ...
-   (vnn,vn2,...);
+SELECT P.name, P.color, P.Size, P.ListPrice into testproduct 
+from Production.Product P;
 
-SHOW VARIABLES LIKE 'max_allowed_packet'; --ennyi új rekordot tartalmazhat 1 insert tranzakció
-
-INSERT INTO table_name(column_list)
-SELECT 
-   select_list 
-FROM 
-   another_table
-WHERE
-   condition;
--- -----------------------
-
-CREATE TABLE ujtabla SELECT column1, column2, columnx FROM regitabla;
-
-INSERT INTO table_name(field1, field2, field3)
-VALUES 	( Select valami from valahonnan ),
-		( Select valami from valahonnan ),
-		( Select valami from valahonnan )
 ```
 
 ---  
