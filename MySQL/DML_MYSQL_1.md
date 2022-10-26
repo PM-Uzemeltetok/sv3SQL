@@ -73,6 +73,12 @@ set col1 = value1,
 	...
 where .....;
 
+UPDATE testproduct
+set color ='kék'
+WHERE color='Blue'
+
+Select * from testproduct
+
 
 UPDATE tablenameA 
 SET 
