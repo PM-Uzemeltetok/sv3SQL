@@ -30,6 +30,15 @@ INSERT #táblanév (mező1, mező2, mező3)
 SELECT (forrásmező1, forrásmező2, forrásmező3)  
 FROM forrástábla  
 
+```sql
+-- új tábla létrehozása
+create table dbo.testcategory (categoryname nvarchar(50))
+
+insert into dbo.testcategory(categoryname)
+Select name from Production.ProductCategory
+
+```
+
 ### Select tartalma nem létező táblába - pl tábla másolás(backup), eredményhalmaz feldolgozás 
 
 Ha nem létezne még a táblázatunk ahova szeretnénk egy lekérdezés eredményét eltárolni erre is van lehetőség. Ilyenkor azonban az SQL fogja automatikusan beállítani a táblázatunk mezőit és ad neveket a mezőknek. Ennek a szintaktikája a következőképpen néz ki.  
@@ -40,7 +49,6 @@ FROM forrástábla
 Itt is igaz hogy a SELECT lehet egy nagyon bonyolult lekérdezés is. **Az adott nével nem lehet tábla az adatbázisunkban.**  
 
 ```sql
--- -----------------------
 SELECT P.name, P.color, P.Size, P.ListPrice into testproduct 
 from Production.Product P;
 
