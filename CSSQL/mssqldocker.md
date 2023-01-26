@@ -15,7 +15,7 @@ Az alábbi könyvtárstruktúrára szükséges:
 ```
   
 Ezt a parancsot kell kiadni terminálban hogy elkészítsd az mssql kontainert  
-*a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre*     
+*-v után cseréld ki az útvonalakat a megfelelőre*     
 
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
@@ -26,7 +26,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
    -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-1 line version
+1 line version 
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql2022" -p 1433:1433 -v c:/db/mssql-docker/data:/var/opt/mssql/data -v c:/dbssql-docker/log:/var/opt/mssql/log -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
 ```
@@ -36,7 +36,6 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql202
 >   --name "sql1" -p 1433:1433 \`  
 >   -v sql1data:/var/opt/mssql \`  
 >   -d mcr.microsoft.com/mssql/server:2019-latest  
-
 
 # AdwentureWorks sample db bemásolása a containerbe, sqlcmd visszaállítás
 
