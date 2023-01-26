@@ -29,9 +29,9 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql202
 ```
 
 > Így a container default mappáját használja  
-> docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `  
->   --name "sql1" -p 1433:1433 `  
->   -v sql1data:/var/opt/mssql `  
+> docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" \`    
+>   --name "sql1" -p 1433:1433 \`  
+>   -v sql1data:/var/opt/mssql \`  
 >   -d mcr.microsoft.com/mssql/server:2019-latest  
 
 
