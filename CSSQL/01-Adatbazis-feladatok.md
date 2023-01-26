@@ -3,7 +3,7 @@ Bontsd különálló táblákra az alábbi adatokat. Használj megszorításokat
 Minden táblán legyen elsõdleges kulcs (Primary key), kivéve az esetleges kapcsolótáblákon.  
 A feladatokhoz hozz létre különálló adatbázist.  
 Készíts diagrammot az elkészült struktúráról.  
-Készítsd el hozzá a törléseket is. 
+Készítsd el hozzá a törléseket is.   
 
 #### 1. Feladat: World  
 ```sql
@@ -29,10 +29,10 @@ N:M Fovaros : Kozlekedes
 ```
 
 #### 2. Feladat: Coctails
-A `Type` és a `Glass` csak egyedi lehet.
-Használj automatikus sorszámozást egyedi kulcsnál a táblákban. A neve legyen "PK_idneve".  
-```sql
+A `Type` és a `Glass` csak egyedi lehet.  
+Használj automatikus sorszámozást egyedi kulcsnál a táblákban. A neve legyen "PK_idneve".    
 
+```sql  
 -- írd ide a saját adatbázisod nevét!
 USE ..... ;
 
@@ -50,3 +50,4 @@ INSERT INTO NonNormalCoctail VALUES
 ('Tequila','Shot','Feles','Tequila, Citrom, Só');
 
 Select * from NonNormalCoctail;
+```
