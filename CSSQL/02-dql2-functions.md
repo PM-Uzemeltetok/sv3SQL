@@ -8,7 +8,7 @@ vannak definiálva akkor változó1 + változó2 =2 viszont ha szövegtípuskén
 Amikor adatokkal dolgozunk gyakran szükséges, hogy ezeket az adattípusokat konvertáljuk. Az SQL ebben segítségünkre van és sok esetben ezt automatikusan megteszi. Azonban vannak helyzetek, amikor erről nekünk kell gondoskodni.
 Természetesen nem mindent lehet mindenné átkonvertálni. Ezt a következő táblázat foglalja össze, illetve az alatta lévő linken találhattok további információkat.
 
-[MY-SQL adattípus konverzió](https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html)
+[MSSQL adattípus konverzió](https://www.sqlshack.com/sql-server-data-type-conversion-methods-performance-comparison/)
 
 A konvertálásra több függvényünk is van. A CAST és a CONVERT függvények teljesen egyenértékűek, csak a szintaktikájuk eltérő, ami a következőképpen néz ki.
 CAST(konvertálandó AS adattípus) a CAST esetében fontos, hogy itt  az AS szó nem hagyható el mindig ki kell írni. A CONVERT(adattípus, konvertálandó) szintaktikája a fordítottja a CAST-énak.
