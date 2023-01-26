@@ -8,7 +8,7 @@ A **CROSS JOIN** két tábla Descartes szorzatát adja vissza, tehát egy tábla
 
 A következő JOIN típusokat viszont már kisebb nagyobb gyakorisággal, de mégis lényegesen többször használjuk mint a CROSS JOIN-t az alábbi kis ábra jól szemlélteti a különbséget.  
 
-![image1](/.pics/sqljoin.png)  
+![image1](./.pics/sqljoin.png)  
 
 Az **INNER JOIN** két táblázat metszetét adja vissza, tehát csak azokat az elemeket, amelyek mindkét táblázatban megtalálhatóak a kapcsolómező alapján. Az alábbi példában a legkérdezésünk csak azokat a termékkategóriákat adja vissza, amelyeknek vannak alkategóriái is.
 ```sql
