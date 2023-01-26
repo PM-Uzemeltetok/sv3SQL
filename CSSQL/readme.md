@@ -7,9 +7,13 @@
 [MSSQL docker container](./mssqldocker.md)  
 
 ### Adatbázisok 
-1. [Adatbázis kezelés alapjai](./01-Adatbazis.md)  
-    [Adatbázis kezelés feladatok](./01-Adatbazis-feladatok.md)      
-    
+##### Data Definition
+[Adatbázis kezelés alapjai](./01-Adatbazis.md)  
+[Adatbázis kezelés feladatok](./exercises/01-Adatbazis-feladatok.md)      
+
+##### Data Manipulation
+[Lekérdezések]     
+
 ---   
 
 # Docker
