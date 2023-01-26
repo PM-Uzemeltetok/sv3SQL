@@ -14,7 +14,8 @@ Az alábbi könyvtárstruktúrára szükséges:
     └───secrets  
 ```
   
-Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre:   
+Ezt a parancsot kell kiadni terminálban hogy elkészítsd az mssql kontainert  
+*a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre*     
 
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
