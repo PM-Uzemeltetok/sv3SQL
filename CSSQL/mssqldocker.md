@@ -7,14 +7,14 @@ Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 Az alábbi könyvtárstruktúrára szükséges: 
 
 \..\
-└───mssql-docker
-    ├───data
-    ├───log
-    └───secrets
+└───mssql-docker  
+    ├───data  
+    ├───log  
+    └───secrets  
+  
+Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre:   
 
-Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre: 
-
-```powershell 
+```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
    --name "sql2022" -p 1433:1433 `
    -v c:/db/mssql-docker/data:/var/opt/mssql/data  `
