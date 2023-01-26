@@ -1,10 +1,10 @@
 # SQL  
 ---  
-### Szükséges szoftverek telepítése, 
+### Szükséges szoftverek telepítése  
 [Infratruktúra telepítés](./00-Infrastruktura.md)  
 
-### MSSQL server docker container
-mssql szerver a saját gépen
+### MSSQL server docker container  
+mssql szerver a saját gépen   
 [MSSQL docker container](./mssqldocker.md)  
 
 --- 
