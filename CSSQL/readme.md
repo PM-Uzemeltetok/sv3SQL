@@ -15,9 +15,10 @@ mssql szerver a saját gépen
 [Adatbázis kezelés feladatok](./exercises/01-Adatbazis-feladatok.md)      
 
 ##### Data Query Language
-1. [Select Where](./02-dql1-select-where.md)  
-    [Select Where feladatok](./exercises/02-dql1-select-where-feladatok.md)
-
+1. [Select,Where,Order BY,részhalmazok](./02-dql1-select-where.md)  
+    [Select,Where feladatok](./exercises/02-dql1-select-where-feladatok.md)
+2. [Függvények, adatkonverziók](./02-dql2-functions.md)
+    [Függvények, adatkonverziók feladatok](./exercises/02-dql2-functions-feladatok.md)
 
 
 ##### Data Manipulation Language
