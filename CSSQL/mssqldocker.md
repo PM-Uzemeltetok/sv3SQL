@@ -1,10 +1,9 @@
-<#
-MSSQL docker container
+### MSSQL docker container
 
 Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 
 
-# Könyvtárak létrehozása
+### Könyvtárak létrehozása
 Az alábbi könyvtárstruktúrára szükséges: 
 
 \..\
@@ -12,27 +11,29 @@ Az alábbi könyvtárstruktúrára szükséges:
     ├───data
     ├───log
     └───secrets
-#>
 
-# Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában
-# a könyvtár elérési útjában cseréld ki a megfelelőre
+Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában a könyvtár elérési útjában cseréld ki a megfelelőre: 
 
+```powershell 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
    --name "sql2022" -p 1433:1433 `
    -v c:/db/mssql-docker/data:/var/opt/mssql/data  `
    -v c:/db/mssql-docker/log:/var/opt/mssql/log  `
    -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets `
    -d mcr.microsoft.com/mssql/server:2022-latest
+```
 
-# 1 line version
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql2022" -p 1433:1433 -v c:/db/mssql-docker/data:/var/opt/mssql/data -v c:/db/mssql-docker/log:/var/opt/mssql/log -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
+1 line version
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql2022" -p 1433:1433 -v c:/db/mssql-docker/data:/var/opt/mssql/data -v c:/dbssql-docker/log:/var/opt/mssql/log -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
+```
 
-<# deafult volumemmal (ne így)
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
-   --name "sql1" -p 1433:1433 `
-   -v sql1data:/var/opt/mssql `
-   -d mcr.microsoft.com/mssql/server:2019-latest
-#>
+> Így a container default mappáját használja  
+> docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `  
+>   --name "sql1" -p 1433:1433 `  
+>   -v sql1data:/var/opt/mssql `  
+>   -d mcr.microsoft.com/mssql/server:2019-latest  
+
 
 # AdwentureWorks sample db bemásolása a containerbe, sqlcmd visszaállítás
 
