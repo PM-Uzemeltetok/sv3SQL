@@ -5,7 +5,7 @@ Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 
 ### Saját könyvtárrakkal
 #### Könyvtárak létrehozása
-Az alábbi könyvtárstruktúrára szükséges: 
+Az alábbi könyvtárstruktúra szükséges: 
 
 ```
 \..\
