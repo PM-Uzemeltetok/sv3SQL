@@ -5,7 +5,7 @@ Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 
 ### Saját könyvtárrakkal
 #### Könyvtárak létrehozása
-Az alábbi könyvtárstruktúra szükséges: 
+Az alábbi könyvtárstruktúra szükséges (a root könyvtár neve szabadon választott, nálam mssql-docker):  
 
 ```
 \..\
