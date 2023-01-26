@@ -28,13 +28,26 @@
 * DQL (Data Query Language)
     - SELECT
 
-## Relációs adatbázis elemei    
+---  
+
+# Relációs adatbázis elemei    
 [A relációs adatbázis](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10709069-a-relacios-adatbazis-alapelemei)  
 [Normalizálás](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708994-normalizalas)  
 [Adattípusok](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10844155-adattipusok-attekintese)
 
+## Elemek, komponensek
+* **Tábla** (Table)
+* Nézet (View)
+* Tárolt eljárás (Stored Procedure)
+* Függvények (Function)
+* Index (Index)
+* Triggerek, System táblák, Ideiglenes táblák, Statisztikák, stb.
+
+# Tábla
+Sor(row) - Rekord(record), Oszlop(column), Mező(field)
+
 ### Normálformák
-* Alapfogalmak: kulcsok (primary, foreign, természetes kulcsok, összetett kulcsok, tulajdonságok, függőségek, redundancia)
+Adattárolási elvek
 * 1NF atomi részekre bontás
 * 2NF összetett kulcsok feloldása
 * 3NF tranzitív függőségek feloldása
@@ -44,12 +57,13 @@
 * 1:N, N:1 - One to Many
 * N:M - Many to Many
 
-## Kulcsok/ Keys
-* Elsődleges kulcsok - egyedi érték (PRIMARY KEY)
-* Természetes kulcsok
-* Többes kulcsok - feloldjuk 2NF-nál
-* Helyettesítő kulcsok (surrogate key)
-* Idegen kulcsok (FOREIGN KEY)
+### Kulcsok/ Keys
+Egyedi sorok meghatározása, egyediség megkövetelése at adattárolási elvek (normálformák) alapján
+* Elsődleges kulcsok - egyedi érték (PRIMARY KEY)  
+* Természetes kulcsok  
+* Többes kulcsok - feloldjuk 2NF-nál  
+* Helyettesítő kulcsok (surrogate key)  
+* Idegen kulcsok (FOREIGN KEY)  
 
 ## Adattípusok  
 ### Numerikus
