@@ -34,6 +34,8 @@ mssql szerver a saját gépen
 [SQL nyelv](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708968-a-t-sql-nyelvek)  
 [T-SQL nyelvi elemek](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10709002-a-t-sql-fontosabb-nyelvi-elemei)
 
+---   
+
 ### CRUD műveletek
 * DDL (Data Definition Language)
     - CREATE, ALTER, DROP
@@ -41,6 +43,11 @@ mssql szerver a saját gépen
     - INSERT, UPDATE, DELETE
 * DQL (Data Query Language)
     - SELECT
+
+---  
+
+#### Tranzakció kezelés
+[Tranzakció kezelés](./03-transactions.md)  
 
 ---  
 
@@ -61,10 +68,7 @@ mssql szerver a saját gépen
 ### Data Manipulation Language
 
 
-### Tranzakció kezelés
-[Tranzakció kezelés](./03-transactions.md)  
 
----   
 
 # Docker
 [Containerization repository](https://github.com/Progmaster-Bootcamp-2022-CSharp/Containerization)  
