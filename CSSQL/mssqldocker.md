@@ -6,8 +6,7 @@ Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 ### Könyvtárak létrehozása
 Az alábbi könyvtárstruktúrára szükséges: 
 
-\..\
-└───mssql-docker  
+\..\mssql-docker   
     ├───data  
     ├───log  
     └───secrets  
