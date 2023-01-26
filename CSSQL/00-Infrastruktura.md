@@ -12,7 +12,7 @@
 
 
 ### Manager applikáció és példa adatbázis
-[Download SQL Server Management Studio (SSMS) - ingyenes utolsó verzió 18.10?](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)  
+[Download SQL Server Management Studio (SSMS) - ingyenes](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)  
 [AdventureWorks sample databases - OLTP AdventureWorks2019.bak](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms)  
 *Ez tartalmazza a visszatöltés lépéseit is*  
 
