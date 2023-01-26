@@ -1,5 +1,6 @@
 # Az adatbázis kezelés alapjai  
-- Adat, információ, tudás - adatbázisok, tudásbázisok
+- Adat, információ, tudás - adatbázisok, tudásbázisok  
+- Fejlődés kőtáblától felhőig  
 - A Database is a set of Data stored in a computer(usually in a Data Storage). In order to work with Databases, we use Database Management Systems(DBMS). Not every set of Data(stored in computers) is considered a Database.  
 - Adatbáisok típusai (a legelterjettebbek)  
     * Hierarchikus  
@@ -81,6 +82,8 @@ Egyedi sorok meghatározása, egyediség megkövetelése at adattárolási elvek
 * DATE
 * TIME
 * DATETIME
+
+### NULL
 
 ## Megszorítások/Constraints
 * NOT NULL - Ensures that a column cannot have a NULL value
