@@ -15,14 +15,17 @@ Az alábbi könyvtárstruktúrára szükséges:
 #>
 
 # Ezt a parancsot kell kiadni terminálban, a fenti könyvtárban rootjában
+# a könyvtár elérési útjában cseréld ki a megfelelőre
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
    --name "sql2022" -p 1433:1433 `
-   -v ./mssql-docker/data:/var/opt/mssql/data  `
-   -v ./mssql-docker/log:/var/opt/mssql/log  `
-   -v ./mssql-docker/secrets:/var/opt/mssql/secrets `
+   -v c:/db/mssql-docker/data:/var/opt/mssql/data  `
+   -v c:/db/mssql-docker/log:/var/opt/mssql/log  `
+   -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets `
    -d mcr.microsoft.com/mssql/server:2022-latest
-#>
+
+# 1 line version
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql2022" -p 1433:1433 -v c:/db/mssql-docker/data:/var/opt/mssql/data -v c:/db/mssql-docker/log:/var/opt/mssql/log -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
 
 <# deafult volumemmal (ne így)
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
@@ -30,6 +33,8 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
    -v sql1data:/var/opt/mssql `
    -d mcr.microsoft.com/mssql/server:2019-latest
 #>
+
+# AdwentureWorks sample db bemásolása a containerbe, sqlcmd visszaállítás
 
 # Backup dir létrehozás
 docker exec -it sql2022 mkdir /var/opt/mssql/backup   
