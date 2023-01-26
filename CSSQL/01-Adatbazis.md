@@ -1,36 +1,3 @@
-# Az adatbázis kezelés alapjai  
-- Adat, információ, tudás - adatbázisok, tudásbázisok  
-- Fejlődés kőtáblától felhőig  
-- A Database is a set of Data stored in a computer(usually in a Data Storage). In order to work with Databases, we use Database Management Systems(DBMS). Not every set of Data(stored in computers) is considered a Database.  
-- Adatbáisok típusai (a legelterjettebbek)  
-    * Hierarchikus  
-    * Relációs   
-    * Object Oriented model(NoSQL)  
-- Relációs adatbázisok típusai  
-    * OLTP  
-    * DW   
-- RDBMS rendszerek (relációs adatbázis kezelő rendszerek)
-    * NAGY mennyiségű adat tárolása
-    * Rendezett tárolási elvek
-    * Tranzakció kezelés megvalósítása (Konkurens hozzáférés kezelés)
-    * Effektív adattárolás
-    * Hozzáférési jogosultságok kezelése
-    * Karbantartási, üzemeltetési feladatok 
-
-## SQL nyelv - avagy amivel az egészet kezeljük
-[SQL nyelv](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708968-a-t-sql-nyelvek)
-[T-SQL nyelvi elemek](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10709002-a-t-sql-fontosabb-nyelvi-elemei)
-
-### CRUD műveletek
-* DDL (Data Definition Language)
-    - CREATE, ALTER, DROP
-* DML (Data Manipulation Language)
-    - INSERT, UPDATE, DELETE
-* DQL (Data Query Language)
-    - SELECT
-
----  
-
 # Relációs adatbázis elemei    
 [A relációs adatbázis](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10709069-a-relacios-adatbazis-alapelemei)  
 [Normalizálás](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708994-normalizalas)  
@@ -92,6 +59,3 @@ Egyedi sorok meghatározása, egyediség megkövetelése at adattárolási elvek
 * FOREIGN KEY - Prevents actions that would destroy links between tables
 * CHECK - Ensures that the values in a column satisfies a specific condition
 * DEFAULT- Sets a default value for a column if no value is specified
-
-
-
