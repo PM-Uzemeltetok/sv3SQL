@@ -74,10 +74,10 @@ docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd `
 ```
 
 #### Egyéb parancsok amiket közben használtam:   
-lehúzza az utolsó imaget a docker hubról
+lehúzza az utolsó imaget a docker hubról  
 ```docker pull mcr.microsoft.com/mssql/server``` 
 
-futtat 1 konténert a 2019-es sql szerverből
+futtat 1 konténert a 2019-es sql szerverből  
 ```docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest```
 
 
@@ -88,7 +88,7 @@ docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd `
    -Q "ALTER LOGIN SA WITH PASSWORD='<YourNewStrong!Passw0rd>'"   
 ``` 
 
-#### Filenév ellenőrzés
+#### backup ellenőrzés
 ```  
 docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd -S localhost `
    -U SA -P "Password123!" `
