@@ -46,7 +46,7 @@ mssql szerver a saját gépen
 
 ---  
 
-#### Tranzakció kezelés
+#### Tranzakciók
 [Tranzakció kezelés](./03-transactions.md)  
 
 ---  
