@@ -1,5 +1,6 @@
-## Adattípusok és kapcsolódó függvények
+## DQL 2.
 
+## Adattípusok és kapcsolódó függvények
 Mint minden programnyelvben az SQL-ben is minden értékhez hozzátartozik valamilyen adattípus ilyen szempontból mindegy, hogy változótról vagy egy adattábla mezőjéről van szó. 
 Az adattípus sok esetben meghatározza, hogy milyen műveletek és hogyan hajthatóak végre az adott értékkel. Például ha van két változónk amiknek az értéke '1' és azok valamilyen számtípusként
 vannak definiálva akkor változó1 + változó2 =2 viszont ha szövegtípusként vannak deklarálva akkor változó1 + változó2=0 mivel MYSQL-ben így nem lehet szöveget összefűzni.
@@ -25,9 +26,9 @@ Azt fogjuk tapasztalni, hogy a függvényünk csinál néhány furcsaságot anna
 - Ha szöveg volt akkor viszont a konverzió után 0 lesz az értéke. Ez utóbbi pedig kifejezetten veszélyes és oda kell figyelni rá.
 Jelen esetben a méret néha karakterrel van megadva például L-es a ruha ez viszont nem egyenló 0-val. 
 
+---  
 
 ## Szöveg függvények
-
 Összegyűjtöttünk néhány olyan függvényt ami a szöveg típusú adatokhoz használható. Ezek megfelelői sok más programnyelvben megjelennek.
 A legfontosabb közülük talán a szöveg összefűzésére szolgáló CONCAT függvény, ami nem csinál mást, mint a megadott szövegeket vagy kifejezések értékét összefűzi egymás után.
 Fontos kitétel, hogyha bármely összefűzni kívánt kifejezés értéke NULL akkor a CONCAT eredménye is NULL lesz. Természetesen erre is van megoldás, amit majd a NULL kezelés témakörében fogunk megnézni.
@@ -76,8 +77,9 @@ A következő példában a közök helyére alávonást '_' írunk.
 SELECT P.name, REPLACE(P.name,' ','_')
 FROM product P
 ```
-## Dátum függvények
+--- 
 
+## Dátum függvények
 A másik fügvénycsoport amivel foglalkozunk most azok a dátum formátumhoz kapcsolódó függvények. A legegyszerűbb közülük amikor csak a dátum egy részére van szükségünk évre, hónapra, adott napra külön külön.
 Erre való a YEAR, MONTH és DAY függvények amik mögé csak zárójelbe meg kell adnunk az adatot.
 Egy egyszerű kis példa erre.
@@ -104,8 +106,9 @@ SELECT 	P.name,
 FROM product P
 ```
 
-## NULL kezelés
+---  
 
+## NULL kezelés
 Az SQL nyelvben a NULL nem egyenlő a matematikai nullával vagy semmivel. A NULL azt jelenti, hogy az adott értéket nem ismerjük. Éppen ezért sokszor kell kezelnünk
 ezt az esetet, mert a NULL-al való összehasonlítás eredménye mindig FALSE illetve a NULL-al végzet bármilyen művelet például az összeadás értéke mindig NULL lesz.
 Ezt az esetet tudja kezelni például a COALESCE függvény, aminek a szintaktikája COALESCE (mezőnév, helyettesítő érték). 
