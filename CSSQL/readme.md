@@ -66,9 +66,9 @@ mssql szerver a saját gépen
     [Táblakapcsolatok feladatok](./exercises/02-dql4-join-feladatok.md)  
 
 ### Data Manipulation Language
+[Insert, Update, Delete](./04-dml1-insert-update-delete.md)  
 
-
-
+---  
 
 # Docker
 [Containerization repository](https://github.com/Progmaster-Bootcamp-2022-CSharp/Containerization)  
