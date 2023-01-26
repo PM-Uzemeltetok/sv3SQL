@@ -13,6 +13,3 @@
 
 # Docker
 [Containerization repository](https://github.com/Progmaster-Bootcamp-2022-CSharp/Containerization)  
-
-
-
