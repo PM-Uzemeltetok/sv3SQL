@@ -8,7 +8,8 @@
 
 ### Adatbázisok 
 1. [Adatbázis kezelés alapjai](./01-Adatbazis.md)  
-
+    [Adatbázis kezelés feladatok](./01-Adatbazis-feladatok.md)      
+    
 ---   
 
 # Docker
