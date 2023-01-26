@@ -2,15 +2,13 @@
 
 ## SQL szerver docker konténerrel
 ### Docker telepítés  
-[Windows - Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)   
-Szükséges hozzá a WSL (Windows Subsystem for Linux / Linux alrendszer)  
-*Vezérlőpult\Programok\ Windows szolgáltatások telepítése*
+- [Windows - Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)   
+    Szükséges hozzá a WSL (Windows Subsystem for Linux / Linux alrendszer)  
+    *Vezérlőpult\Programok\ Windows szolgáltatások telepítése*
+- [Mac - Docker desktop](https://docs.docker.com/desktop/install/mac-install/)
+- [Linux](https://docs.docker.com/engine/install/)
 
-[Mac - Docker desktop](https://docs.docker.com/desktop/install/mac-install/)
-
-[Linux](https://docs.docker.com/engine/install/)
-
-
+---  
 
 
 ### Manager applikáció és példa adatbázis
@@ -18,7 +16,7 @@ Szükséges hozzá a WSL (Windows Subsystem for Linux / Linux alrendszer)
 [AdventureWorks sample databases - OLTP AdventureWorks2019.bak](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms)  
 *Ez tartalmazza a visszatöltés lépéseit is*  
 
----  
+
 
 ## SSMS 
 [Az SQL Server Management Studio](https://e-learning.training360.com/courses/take/1bevezetes-az-sql-server-hasznalataba/lessons/10708971-az-sql-server-management-studio)  
