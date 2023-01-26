@@ -3,7 +3,8 @@
 Docker-cheat-sheet https://github.com/wsargent/docker-cheat-sheet
 
 
-### Könyvtárak létrehozása
+### Saját könyvtárrakkal
+#### Könyvtárak létrehozása
 Az alábbi könyvtárstruktúrára szükséges: 
 
 ```
@@ -31,16 +32,20 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" `
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" --name "sql2022" -p 1433:1433 -v c:/db/mssql-docker/data:/var/opt/mssql/data -v c:/dbssql-docker/log:/var/opt/mssql/log -v c:/db/mssql-docker/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-> Így a container default mappáját használja  
-> docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" \`    
->   --name "sql1" -p 1433:1433 \`  
->   -v sql1data:/var/opt/mssql \`  
->   -d mcr.microsoft.com/mssql/server:2019-latest  
+### Default helyen tárolt volume-mal
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" \`    
+   --name "sql1" -p 1433:1433 \`  
+   -v sql1data:/var/opt/mssql \`  
+   -d mcr.microsoft.com/mssql/server:2019-latest  
+```
 
-### AdwentureWorks sample db bemásolása a containerbe, sqlcmd visszaállítás
+---  
+
+## AdwentureWorks sample db bemásolása a containerbe, sqlcmd visszaállítás
 
 #### Backup dir létrehozás
-docker exec -it sql2022 mkdir /var/opt/mssql/backup   
+```docker exec -it sql2022 mkdir /var/opt/mssql/backup```  
 
 #### #AW2019 letöltés 
 git-ről az aktuális könyvtáraba:
