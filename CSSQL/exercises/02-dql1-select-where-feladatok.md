@@ -17,9 +17,6 @@
 8. Kérdezd le a kék és a piros termékeket a product táblából.
 9. Kérdezd le a 42-es és 62-es méretű termékeket a product táblából.
 10. Kérdezd le azokat a termékeket amiknek a listaára 100 és 500 forint között van.
-
-
-## -------------------------------------
 11. Kérdezd le azokat a rendelésazonosítókat amiket 2012.03.01 és 2012.03.20. között rendeltek SalesOrderHeader táblából.
 12. Kérdezd le a 42-es méretű fekete termékeket.
 13. Kérdezd le a nem 42-es méretű termékeket.

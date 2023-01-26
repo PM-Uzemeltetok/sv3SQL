@@ -1,4 +1,4 @@
-# DQL 1.
+## DQL 1.
 
 ### Predikátumok, állítások.
 Ezek segítségével is kialakíthatunk feltételeket , tehetünk állításokat vagy szűrhetünk. Ilyen például az IN a vizsgált adat a felsoroltak között van.
