@@ -16,12 +16,13 @@ mssql szerver a saját gépen
 
 ##### Data Query Language
 1. [Select,Where,Order BY,részhalmazok](./02-dql1-select-where.md)  
-    [Select,Where feladatok](./exercises/02-dql1-select-where-feladatok.md)
+    [Select,Where feladatok](./exercises/02-dql1-select-where-feladatok.md)  
 2. [Függvények, adatkonverziók](./02-dql2-functions.md)  
     [Függvények, adatkonverziók feladatok](./exercises/02-dql2-functions-feladatok.md)  
-3. [Csoportosítás](./02-dql3-groupby.md)
-    [Csoportosítás feladatok](./exercises/02-dql3-groupby-feladatok_3.md)
-
+3. [Csoportosítás](./02-dql3-groupby.md)  
+    [Csoportosítás feladatok](./exercises/02-dql3-groupby-feladatok_3.md)  
+4. [Táblakapcsolatok](./02-dql4-join.md)  
+    [Táblakapcsolatok feladatok](./exercises/02-dql4-join-feladatok.md)  
 
 ##### Data Manipulation Language
 
