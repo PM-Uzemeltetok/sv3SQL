@@ -4,15 +4,21 @@
 [Infratruktúra telepítés](./00-Infrastruktura.md)  
 
 ### MSSQL server docker container
+mssql szerver a saját gépen
 [MSSQL docker container](./mssqldocker.md)  
 
-### Adatbázisok 
+--- 
+
+## Adatbázisok 
 ##### Data Definition
 [Adatbázis kezelés alapjai](./01-Adatbazis.md)  
 [Adatbázis kezelés feladatok](./exercises/01-Adatbazis-feladatok.md)      
 
-##### Data Manipulation
+##### Data Query Language
 [Lekérdezések]     
+
+##### Data Manipulation Language
+
 
 ---   
 
